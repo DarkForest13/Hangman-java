@@ -1,2 +1,4 @@
 # Hangman-java
-A simple socket programming project
+A simple client server hangman game.
+
+for learning socket programming.
