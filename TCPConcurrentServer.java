@@ -1,4 +1,4 @@
-//TCPConcurrentServer.java
+package src;
 import java.io.*; 
 import java.net.*; 
 import java.util.*;
@@ -13,6 +13,7 @@ public class TCPConcurrentServer {
             System.out.println("Cannot create a welcome socket");
             System.exit(1);
         }
+        System.out.println("======= Server started ======= ");
         while (true) {
             try {
                 System.out.println("The server is waiting ");
@@ -25,4 +26,3 @@ public class TCPConcurrentServer {
         }
     }
 }
-

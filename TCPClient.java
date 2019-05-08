@@ -1,8 +1,8 @@
-import java.io.*; 
+package src;
+import java.io.*;
 import java.net.*;
 import java.util.*;
-
-class TCPClient {
+public class TCPClient {
     public static void main(String argv[]) throws Exception {
         String sentence;
         String modifiedSentence;
@@ -15,11 +15,10 @@ class TCPClient {
             clientSocket = new Socket("localhost", 6789);
             outToServer = new DataOutputStream(clientSocket.getOutputStream());
             inFromServer = new Scanner(clientSocket.getInputStream());
-            System.out.print("Please enter words: ");
-            sentence = inFromUser.nextLine();
-            outToServer.writeBytes(sentence + '\n');
-            modifiedSentence = inFromServer.nextLine();
-            System.out.println("FROM SERVER: " + modifiedSentence);
+
+            while(true){
+                break;
+            }
         } catch (IOException e) {
             System.out.println("Error occurred: Closing the connection");
         } finally {
@@ -36,7 +35,3 @@ class TCPClient {
         }
     }
 }
-
-
-    modifiedSentence = inFromServer.nextLine(); 
-           System.out.println("FROM SERVER: " + modifiedSentence);
