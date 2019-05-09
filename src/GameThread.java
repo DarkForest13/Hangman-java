@@ -6,12 +6,12 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MultiThreadRespond implements Runnable{
+public class GameThread implements Runnable{
 
     private ServerSocket server;
     private int port;
 
-    public MultiThreadRespond(int port){
+    public GameThread(int port){
         this.port = port;
         try{
             server = new ServerSocket(port);

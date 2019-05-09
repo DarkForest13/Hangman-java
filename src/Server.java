@@ -1,6 +1,5 @@
 package src;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.ClassNotFoundException;
@@ -30,7 +29,7 @@ public class Server {
                 System.out.println("[Server] Server acppected : " + message);
                 Random rand = new Random();
                 int newPort = rand.nextInt(9000)+1000;
-                MultiThreadRespond mr = new MultiThreadRespond(newPort);
+                GameThread mr = new GameThread(newPort);
                 thread = new Thread(mr);
                 thread.start();
                 ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());

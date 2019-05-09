@@ -1,5 +1,3 @@
-package src;
-
 import java.net.ConnectException;
 import java.util.Scanner;
 import java.io.IOException;
@@ -74,13 +72,13 @@ public class Client {
         int timeout = 0;
         while (isContinue) {
             try {
-                //get the localhost IP address
+                //get the localhost IP InetAddress
                 InetAddress localhost = InetAddress.getLocalHost();
 
                 //init socket with localhost and port
                 int port = 3742;
-                //String ip = "172.17.0.2"; //docker ip
-                Socket socket = new Socket(localhost, port);
+                String address = "172.17.0.2"; //docker IPaddress
+                Socket socket = new Socket(address, port);
 
                 //sending request new port
                 oos = new ObjectOutputStream(socket.getOutputStream());
@@ -92,12 +90,12 @@ public class Client {
                 System.out.println("new Port: " + newPort);
 
                 //switch to new port
-                socket = new Socket(localhost, Integer.parseInt(newPort));
+                socket = new Socket(address, Integer.parseInt(newPort));
                 oos = new ObjectOutputStream(socket.getOutputStream());
                 ois = new ObjectInputStream(socket.getInputStream());
 
                 System.out.println("Client - Hangman game is starting...");
-                System.out.println("Connecting to "+ localhost + " Port : " + newPort);
+                System.out.println("Connecting to "+ address + " Port : " + newPort);
 
                 System.out.print("\nDo you want to play? (y/n) : ");
                 isContinue = toContinue();
@@ -212,6 +210,6 @@ public class Client {
     }
 
     private void cls(){
-        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n ");
+        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
     }
 }
